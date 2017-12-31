@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1><%= @user.name %></h1>
+    </div>
+    <div class="col-md-4">
+
+      <div class="well">
+        <strong><%= @user.email %></strong>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <%= simple_format @user.intro %>
+    </div>
+    <div class="clearfix"></div>
+    <hr>
+  </div>
+</div>
