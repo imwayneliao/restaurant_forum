@@ -4,7 +4,8 @@
       <h1><%= @user.name %></h1>
     </div>
     <div class="col-md-4">
-
+      <%= image_tag @user.avatar, class: "img-responsive center-block", width: '600px'%>
+      <br>
       <div class="well">
         <strong><%= @user.email %></strong>
       </div>
@@ -14,5 +15,8 @@
     </div>
     <div class="clearfix"></div>
     <hr>
+    <div>
+      <%= link_to '修改', edit_user_path(@user), class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
