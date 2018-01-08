@@ -22,3 +22,10 @@
   float: none;
   display: inline-block;
 }
+.my-restaurant {
+  border: 1px solid #ddd;
+  display: inline-block;
+}
+.my-restaurant > div {
+  height: 60px;
+}
