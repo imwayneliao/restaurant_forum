@@ -23,9 +23,12 @@
   display: inline-block;
 }
 .my-restaurant {
-  border: 1px solid #ddd;
   display: inline-block;
+  text-align: center;
 }
 .my-restaurant > div {
-  height: 60px;
+  height: 100px;
+}
+.my-restaurant img {
+  max-height: 100%;
 }
