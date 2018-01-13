@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :comments, dependent: :restrict_with_error
   has_many :restaurants, through: :comments
+   # 「使用者收藏很多餐廳」的多對多關聯
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_restaurants, through: :favorites, source: :restaurant
   validates_presence_of :name
   mount_uploader :avatar, AvatarUploader
   def admin?
