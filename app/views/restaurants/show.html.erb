@@ -17,6 +17,9 @@
     </div>
     <div class="col-md-8">
       <%= simple_format @restaurant.description %>
+      <%= link_to dashboard_restaurant_path do%>
+        <button class="btn btn-primary">Dashboard</button>
+      <% end %>
     </div>
     <div class="clearfix"></div>
     <hr>
