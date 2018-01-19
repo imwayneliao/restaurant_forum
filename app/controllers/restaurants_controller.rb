@@ -12,6 +12,9 @@ class RestaurantsController < ApplicationController
     @recent_restaurants = Restaurant.order(created_at: :desc).limit(10)
     @recent_comments = Comment.order(created_at: :desc).limit(10)
   end
+  def ranking
+    @top_restaurants = Restaurant.order(favorites_count: :desc).limit(10)
+  end
   def dashboard
     @restaurant = Restaurant.find(params[:id])
   end

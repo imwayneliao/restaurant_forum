@@ -1,0 +1,13 @@
+<h1>Top 10 人氣餐廳</h1>
+<h3>（收藏數最高）<h3>
+<% @top_restaurants.each do |restaurant| %>
+  <%= image_tag restaurant.image %>
+  <br>
+  <%= restaurant.name %>
+  <%= restaurant.favorites_count %>
+  <%= restaurant.description %>
+  <%= link_to "show", restaurant_path(restaurant), class:"btn btn-primary" %>
+  <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>
+  <br>
+  <hr>
+<% end %>
