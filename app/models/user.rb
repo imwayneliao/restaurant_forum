@@ -30,7 +30,7 @@ class User < ApplicationRecord
     self.friends.include?(user)
   end
   def all_friends
-    friends = self.friends.concat(self.inverse_friends).uniq
+    friends = self.friends+self.inverse_friends
     return friends
   end
 end
