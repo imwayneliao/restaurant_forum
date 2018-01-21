@@ -23,6 +23,9 @@ class UsersController < ApplicationController
       flash[:alert] = "user was failed to update"
     end
   end
+  def friend_list
+    @friend_list = current_user.all_friends.uniq
+  end
 
   private
   def user_params
