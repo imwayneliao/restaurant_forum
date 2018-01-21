@@ -6,24 +6,78 @@
     <div class="col-md-8">
       <h1><%= @user.name %></h1>
       <strong><%= @user.email %></strong>
+      <p><%= @commented_restaurants.count %> 已評論餐廳 <%= @favorited_restaurants.count %> 收藏的餐廳 <%= @followings.count %> followings <%= @followers.count %> followers</p>
       <p><%= simple_format @user.intro %></p>
       <% if current_user == @user %> 
         <%= link_to '修改', edit_user_path(@user), class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <%= @commented_restaurants.count%> 已評論餐廳</div>
-    <div class="panel-body">
-      <% @commented_restaurants.each do |restaurant| %>
-        <%= link_to restaurant_path(restaurant) do %>
-          <div class="my-restaurant">
-            <div><%= image_tag restaurant.image, class: "img-responsive center-block" %></div>
-            <h5><%= restaurant.name %></h5>
-          </div>
-        <% end %>
-      <% end %>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= @followings.count%> followings</div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <% @followings.each do |followings| %>
+              <li class="list-group-item">
+                <%= link_to user_path(followings) do %>
+                  <img src="http://via.placeholder.com/60x60" alt="placeholder" class="img-circle">
+                  <%= followings.name %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= @followers.count%> followers</div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <% @followers.each do |followers| %>
+              <li class="list-group-item">
+                <%= link_to user_path(followers) do %>
+                  <img src="http://via.placeholder.com/60x60" alt="placeholder" class="img-circle">
+                  <%= followers.name %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= @commented_restaurants.count%> 已評論餐廳</div>
+        <div class="panel-body">
+          <% @commented_restaurants.each do |restaurant| %>
+            <%= link_to restaurant_path(restaurant) do %>
+              <div class="my-restaurant">
+                <div><%= image_tag restaurant.image, class: "img-responsive center-block" %></div>
+                <h5><%= restaurant.name %></h5>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= @favorited_restaurants.count%> 已收藏餐廳</div>
+        <div class="panel-body">
+          <% @favorited_restaurants.each do |restaurant| %>
+            <%= link_to restaurant_path(restaurant) do %>
+              <div class="my-restaurant">
+                <div><%= image_tag restaurant.image, class: "img-responsive center-block" %></div>
+                <h5><%= restaurant.name %></h5>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 
