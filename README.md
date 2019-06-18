@@ -1,24 +1,16 @@
-# README
+restaurant-forum
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+網站：https://wayne-restaurant-forum.herokuapp.com
 
-Things you may want to cover:
+語言：Ruby on Rails
 
-* Ruby version
+練習：
+1）有分前台、後台。管理員身分才能進入後台。後台可以對餐廳做CRUD。前台可以留言評論餐廳。
 
-* System dependencies
+2）Category Model:將餐廳分類。
 
-* Configuration
+3）Followship Model:使用者可以追蹤使用者。
 
-* Database creation
+4) Friendship Model:使用者可以添加好友。
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+5）Favorite Model:使用者可以收藏餐廳。
